@@ -93,18 +93,19 @@ nav a:hover {
 }
 /* header and nav for mobile devices */
 .side {
-  background-color: red;
+  background-color: #333;
   position: fixed;
   top: 0;
   right: 0;
-  width: 30%;
+  width: 40%;
   height: 100%;
   z-index: 1000;
   display: none;
   transition: all 0.3s ease;
 }
+
 .sideCloseContainer {
-  background-color: blue;
+  background-color: #007bff;
   display: flex;
   align-items: center;
   padding: 10px;
@@ -167,7 +168,7 @@ main {
 .project p,
 .pilot2 p,
 .pilot2 li {
-  font-size: 1.2rem;
+  font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 20px;
 }
@@ -195,12 +196,12 @@ main {
 }
 .home h5,
 .minority p {
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin-bottom: 10px;
   color: #777;
 }
 .home h6 {
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin-bottom: 10px;
   color: #999;
 }
@@ -228,6 +229,7 @@ main {
   align-items: center;
   margin: 40px 0;
 }
+
 .about-logo {
   width: 400px;
   height: 450px;
@@ -279,43 +281,10 @@ main {
   content: "🔥";
   margin-right: 8px;
 }
-.trustee-title {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #333;
-}
-.trustee-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 50px;
-  margin-top: 20px;
-}
-.trustee-item {
-  background-color: #fff;
-  padding: 20px 5px;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  width: 250px;
-  height: 300px;
-  z-index: 1;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.trustee-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-.trustee-item i {
-  font-size: 8rem;
-  color: #007bff;
-  margin-bottom: 10px;
-}
+
 .pilotContainer,
 .Alfred,
-.minority,
-.pilot2 {
+.minority {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -359,7 +328,7 @@ main {
 .minority-table {
   width: 50%;
   max-width: 800px;
-  font-size: 2rem;
+  font-size: 1.5rem;
   border-collapse: collapse;
   margin-top: 10px;
   text-align: left;
@@ -376,7 +345,17 @@ main {
   text-transform: uppercase;
 }
 .pilot2 {
-  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.cone-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 3rem;
 }
 .pilot2 h2 {
   font-size: 2rem;
@@ -421,7 +400,8 @@ main {
   margin-bottom: 40px;
 }
 .plot2-Affiliate span.Institution,
-.team span {
+.team span,
+.minority-title h4 {
   color: #007bff;
   font-weight: bold;
   text-transform: uppercase;
@@ -433,7 +413,7 @@ main {
   color: #333;
 }
 .plot2-Affiliate p {
-  font-size: 1.2rem;
+  font-size: 0.7rem;
   line-height: 1.6;
   margin-bottom: 20px;
   color: #555;
@@ -441,7 +421,7 @@ main {
 .plot2-Affiliate li {
   list-style: none;
   padding-left: 0;
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin-bottom: 10px;
   line-height: 30px;
   color: #555;
@@ -457,19 +437,24 @@ main {
 }
 .laison h2,
 .team h2,
-.team h4 {
-  font-size: 2rem;
+.team h4,
+.minority-title h4 {
+  font-size: 0.9rem;
   margin-bottom: 20px;
   color: #333;
 }
-.laison table {
+.laison table,
+.minority-table {
   width: 80%;
-  max-width: 800px;
+  align-items: center;
   border-collapse: collapse;
   text-align: left;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   background-color: #fff;
   border: 1px solid #ddd;
+}
+.minority-table {
+  font-size: 1 rem;
 }
 .laison th,
 .laison td,
@@ -504,7 +489,7 @@ main {
   margin: 40px auto;
   text-align: center;
   color: #333;
-  font-size: 1.2rem;
+  font-size: 0.9rem;
   line-height: 1.6;
   font-weight: 500;
 }
@@ -561,10 +546,11 @@ footer {
 .media a {
   color: #fff;
   font-size: 1.5rem;
-  transition: color 0.3s ease;
+  transition: transform 0.3s ease;
 }
 .media a:hover {
   color: #007bff;
+  transform: translateY(-3px);
 }
 
 .newsletter input {
@@ -609,116 +595,97 @@ footer {
 
 /* media queries */
 /* for mobile devices */
-@media (max-width: 480px), (max-width: 768px) {
+@media (max-width: 200px), (max-width: 768px) {
   body {
     padding: 0;
     margin: 0;
-    width: 100%;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
   }
-  
+
   nav,
-  .search-input {
+  #searchInput {
     display: none;
   }
   h2 {
-    font-size: 1.5rem;
+    font-size: 0.9rem;
   }
   main h3,
   main h4,
   main h5,
   main h6 {
-    font-size: 1.2rem;
+    font-size: 0.8rem;
   }
   p,
   li {
-    font-size: 1rem;
+    font-size: 0.7rem;
   }
   .menuToggle {
     display: block;
   }
   main {
-    width: 90%;
+    width: 90vw;
     padding: 10px;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .ourStand {
+    font-size: 0.4rem;
   }
   main h5,
   .about-logo,
   .Alfred-logo,
   .cone-logo,
   .team-logo {
-    width: 50%;
+    width: 30%;
     height: auto;
   }
-  .aims-objectives,
-  .minority,
-  .pilot2,
-  .plot2-Affiliate,
-  .team {
-    flex-direction: column;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    box-sizing: border-box;
-    overflow-x: hidden;
+  .pilotContainer,
+  .AlfredCpntainer,
+  .minority {
     width: 90vw;
   }
-  .minority {
-    width: 100%;
-    padding: 20px;
-    font-size: 1rem;
+  .pilotContainer h2,
+  .we h2,
+  .Alliance {
+    font-size: 1.1rem;
+    color: #007bff;
+    text-align: center;
+  }
+  .statesTittle,
+  .pilot2 h5,
+  .plot2-Affiliate p {
+    text-align: center;
+    margin-left: -20px;
+    font-size: 1.1rem;
+    width: 90vw;
+    margin-bottom: 10px;
+  }
+  .statesTittle {
+    color: #007bff;
   }
   .minority-table {
-    width: 100%;
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
-  .minority h5,
-  .pilot2 h5 {
-    font-size: 1.2rem;
-    width: 100%;
+  .cone-logo-container {
+    font-size: 0.7rem;
+    display: flex;
+    flex-direction: column;
   }
-  .pilot2 {
-    margin-top: 2rem;
-    width: 100%;
-    padding: 0 20px;
-    font-size: 1rem;
-  }
-
   .plot2-Affiliate {
-    width: 100%;
-    padding: 20px;
+    width: 90vw;
+    margin-bottom: 0;
   }
-  .laison {
-    width: 100%;
-    padding: 20px;
-    font-size: 1rem;
-    margin-right: 70px;
-  }
-  .laison-table {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: left;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border: 1px solid #ddd;
-  }
+  .liaison-table,
   .team {
-    width: 100vw;
-    font-size: 1rem;
-    padding: 20px;
-    text-align: center;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-  }
-  .team h2 {
-    font-size: 1.5rem;
-  }
-  .team table {
-    width: 100%;
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
   footer {
     padding: 20px;
@@ -764,6 +731,7 @@ footer {
   .search-input {
     min-width: 200px;
     width: 200px;
+    display: block;
   }
 }
 
@@ -772,6 +740,5 @@ nav ul li {
   margin: 0 10px;
 }
 
-@media (max-width:760px){
-  
+@media (max-width: 760px) {
 }
